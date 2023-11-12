@@ -98,9 +98,12 @@
         </div>
       </div>
       <div class="info-box">
-        <el-table :data="tableData">
-          <el-table-column prop="date" label="Date" width="180" />
-          <el-table-column prop="name" label="Name" width="180" />
+        <el-table :data="tableData" highlight-current-row>
+          <el-table-column prop="name" label="人员名称" />
+          <el-table-column prop="dept" label="部门" />
+          <el-table-column prop="num" label="定位卡号" show-overflow-tooltip />
+          <el-table-column prop="speed" label="实时速度" />
+          <el-table-column prop="date" label="数据时间" show-overflow-tooltip />
         </el-table>
       </div>
     </div>
@@ -110,39 +113,39 @@
 <script setup>
 const tableData = [
   {
-    date: "2016-05-03",
-    name: "Tom",
-    address: "No. 189, Grove St, Los Angeles",
+    name: '李永帅',
+    dept: '施工队',
+    num: '120685779',
+    speed: '0.53',
+    date: '2023-10-31',
   },
   {
-    date: "2016-05-02",
-    name: "Tom",
-    address: "No. 189, Grove St, Los Angeles",
+    name: '李永帅',
+    dept: '施工队',
+    num: '120685779',
+    speed: '0.53',
+    date: '2023-10-31',
   },
   {
-    date: "2016-05-04",
-    name: "Tom",
-    address: "No. 189, Grove St, Los Angeles",
+    name: '李永帅',
+    dept: '施工队',
+    num: '120685779',
+    speed: '0.53',
+    date: '2023-10-31',
   },
   {
-    date: "2016-05-01",
-    name: "Tom",
-    address: "No. 189, Grove St, Los Angeles",
+    name: '李永帅',
+    dept: '施工队',
+    num: '120685779',
+    speed: '0.53',
+    date: '2023-10-31',
   },
   {
-    date: "2016-05-08",
-    name: "Tom",
-    address: "No. 189, Grove St, Los Angeles",
-  },
-  {
-    date: "2016-05-06",
-    name: "Tom",
-    address: "No. 189, Grove St, Los Angeles",
-  },
-  {
-    date: "2016-05-07",
-    name: "Tom",
-    address: "No. 189, Grove St, Los Angeles",
+    name: '李永帅',
+    dept: '施工队',
+    num: '120685779',
+    speed: '0.53',
+    date: '2023-10-31',
   },
 ];
 </script>
@@ -155,7 +158,7 @@ const tableData = [
     width: 100%;
     height: vh(30);
     margin-top: vh(16);
-    background-image: url("@/assets/images/home/title_icon.png");
+    background-image: url('@/assets/images/home/title_icon.png');
     background-size: cover;
     background-repeat: no-repeat;
     margin-left: vh(5);
@@ -207,7 +210,7 @@ const tableData = [
         margin-top: vh(4);
         width: vw(36);
         height: vh(4);
-        background-image: url("@/assets/images/home/line_icon.png");
+        background-image: url('@/assets/images/home/line_icon.png');
         background-size: cover;
         background-repeat: no-repeat;
       }
@@ -219,7 +222,6 @@ const tableData = [
     height: vh(271);
     .info-box {
       display: flex;
-
       justify-content: space-around;
       .info-title {
         font-size: vh(18);
@@ -242,7 +244,7 @@ const tableData = [
       .img-box {
         width: vw(137);
         height: vh(136);
-        background-image: url("@/assets/images/home/bottom.png");
+        background-image: url('@/assets/images/home/bottom.png');
         background-size: cover;
         text-align: center;
         background-repeat: no-repeat;
@@ -327,7 +329,7 @@ const tableData = [
 
             background: rgba(8, 139, 255, 0.11);
             border: 1px solid #0f4a96;
-            background-image: url("@/assets/images/home/user.png");
+            background-image: url('@/assets/images/home/user.png');
             opacity: 0.5;
             background-size: contain;
             background-repeat: repeat;
@@ -346,7 +348,7 @@ const tableData = [
           height: vh(160);
           // border: vh(2) solid rgba(204, 238, 255, 0.28);
           // border-radius: 50%;
-          background-image: url("@/assets/images/home/circle3.png");
+          background-image: url('@/assets/images/home/circle3.png');
           // opacity: ;
           background-size: cover;
           background-repeat: no-repeat;
@@ -459,34 +461,13 @@ const tableData = [
 
     .info-box {
       width: 100%;
+
       :deep(.el-table) {
         width: 90%;
         margin: 0 auto;
-        height: vh(278);
-        background-color: #271344;
-        color: #bfc37c;
-        font-size: 14px;
-      }
-      // 深色系表格
-      .el-table {
-      }
-      // 表格每行的白色横线去掉
-      .el-table td,
-      .el-table-th.is-leaf {
-        border-bottom: none !important;
-      }
-      // 表格最后一行的白色横线去掉
-      .el-table::before {
-        display: none;
-      }
-      // 鼠标移入变色
-      .el-table tbody tr:hover > td {
-        background-color: #2c5171 !important;
-      }
-      // 当前行高亮变色，首先要设置highlight-current-row
-      .el-table tbody tr.current-row > td {
-        background-color: #3998e5;
-        color: #ffffff;
+        margin-top: vh(15);
+        height: vh(258);
+        font-size: vh(14);
       }
     }
   }

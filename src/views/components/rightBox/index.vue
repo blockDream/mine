@@ -99,11 +99,57 @@
           <div class="bg"></div>
         </div>
       </div>
+      <div class="info-box">
+        <el-table :data="tableData" highlight-current-row>
+          <el-table-column prop="carName" label="车辆名称" />
+          <el-table-column prop="type" label="车辆类型" />
+          <el-table-column prop="carNum" label="车牌" show-overflow-tooltip />
+          <el-table-column prop="dept" label="部门" />
+          <el-table-column prop="num" label="定位卡号" show-overflow-tooltip />
+        </el-table>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
+const tableData = [
+  {
+    carName: '装卸机1',
+    dept: '施工队',
+    num: '120685779',
+    type: '装卸机',
+    carNum: '545435',
+  },
+  {
+    carName: '装卸机1',
+    dept: '施工队',
+    num: '120685779',
+    type: '装卸机',
+    carNum: '545435',
+  },
+  {
+    carName: '装卸机1',
+    dept: '施工队',
+    num: '120685779',
+    type: '装卸机',
+    carNum: '545435',
+  },
+  {
+    carName: '装卸机1',
+    dept: '施工队',
+    num: '120685779',
+    type: '装卸机',
+    carNum: '545435',
+  },
+  {
+    carName: '装卸机1',
+    dept: '施工队',
+    num: '120685779',
+    type: '装卸机',
+    carNum: '545435',
+  },
+];
 </script>
 
 <style lang="scss" scoped>
@@ -114,7 +160,7 @@
     width: 100%;
     height: vh(30);
     margin-top: vh(16);
-    background-image: url("@/assets/images/home/title_icon.png");
+    background-image: url('@/assets/images/home/title_icon.png');
     background-size: cover;
     background-repeat: no-repeat;
     .title {
@@ -140,7 +186,7 @@
         margin-top: vh(4);
         width: vw(36);
         height: vh(4);
-        background-image: url("@/assets/images/home/line_icon.png");
+        background-image: url('@/assets/images/home/line_icon.png');
         background-size: cover;
         background-repeat: no-repeat;
       }
@@ -160,7 +206,7 @@
           rgba(29, 52, 118, 0.41) 20%,
           rgba(19, 122, 176, 0) 100%
         );
-        background-image: url("@/assets/images/home/right_car_box.png");
+        background-image: url('@/assets/images/home/right_car_box.png');
         background-size: cover;
         background-repeat: no-repeat;
         display: flex;
@@ -201,7 +247,7 @@
         .info-online-car {
           width: 40%;
           height: vh(79);
-          background-image: url("@/assets/images/home/online_car.png");
+          background-image: url('@/assets/images/home/online_car.png');
           background-size: contain;
           background-repeat: no-repeat;
           display: flex;
@@ -228,7 +274,7 @@
         .info-outline-car {
           width: 40%;
           height: vh(79);
-          background-image: url("@/assets/images/home/outline_car.png");
+          background-image: url('@/assets/images/home/outline_car.png');
           background-size: contain;
           background-repeat: no-repeat;
           display: flex;
@@ -271,7 +317,7 @@
           width: vw(90);
           height: vh(84);
           text-align: center;
-          background-image: url("@/assets/images/home/car_info2.png");
+          background-image: url('@/assets/images/home/car_info2.png');
           background-size: contain;
           background-repeat: no-repeat;
           @keyframes bigCar {
@@ -327,7 +373,17 @@
     }
   }
   .content-bottom {
-    height: vh(368);
+    height: vh(308);
+    .info-box {
+      width: 100%;
+      :deep(.el-table) {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: vh(15);
+        height: vh(258);
+        font-size: vh(14);
+      }
+    }
   }
 }
 </style>

@@ -103,3 +103,59 @@ a:focus {
   transform-origin: 0 0;
   /* background-color: palegoldenrod; */
 }
+
+//dark
+/*最外层透明*/
+.el-table,
+.el-table__expanded-cell {
+  background-color: transparent !important;
+}
+/* 表格内背景颜色 */
+// .el-table th,
+.el-table tr,
+.el-table td {
+  background-color: transparent !important;
+  color: #d8f0ff;
+  text-align: center !important;
+}
+//修改行内线
+.el-table td,
+.el-table th.is-leaf {
+  border-bottom: none !important;
+}
+.el-table th.el-table__cell.is-leaf {
+  border-bottom: none;
+}
+.el-table__body tr.current-row {
+  opacity: 0.5;
+  background: linear-gradient(270deg, rgba(26, 123, 230, 0) 0%, rgba(0, 119, 254, 0.8));
+}
+.el-table__inner-wrapper::before {
+  background-color: transparent !important;
+}
+
+// 深色系表格
+.el-table {
+}
+// 表格每行的白色横线去掉
+.el-table td,
+.el-table-th.is-leaf {
+  border-bottom: none !important;
+}
+// 表格最后一行的白色横线去掉
+.el-table::before {
+  display: none;
+}
+.el-table {
+  th {
+    background: rgba(21, 77, 160, 0.57) !important;
+    text-align: center !important;
+  }
+  thead {
+    color: #ffffff;
+    font-weight: 400;
+  }
+  tr {
+    background-color: transparent;
+  }
+}

@@ -11,6 +11,11 @@ const routes = [
     name: 'home',
     component: () => import('../views/home.vue'),
   },
+  {
+    path: '/vehiclePositionSys',
+    name: 'vehiclePositionSys',
+    component: () => import('@/views/components/carPositionSys/index.vue'),
+  },
 ];
 
 const hash = createWebHashHistory();

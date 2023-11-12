@@ -1,52 +1,32 @@
-
-  <template>
+<template>
   <div class="container">
     <div class="content-box">
       <div class="content-left">
         <leftBox />
       </div>
-      <div class="content-right">
+      <div :class="['content-right', state.showAside ? 'show-aside' : '']">
         <rightBox />
       </div>
-      <div class="aside-model" @click="handleShowHide">
-        <img
-          class="show_btn"
-          v-if="!state.showAside"
-          src="@/assets/images/home/aside_btn.png"
-        />
-      </div>
-      <div
-        class="aside-model-show"
-        @click="handleShowHide"
-        v-if="state.showAside"
-      >
-        <dic class="aside-list">
-          <div class="aside-item">视频监控系统</div>
-          <div class="aside-item">视频监控系统</div>
-          <div class="aside-item">视频监控系统</div>
-          <div class="aside-item">视频监控系统</div>
-          <div class="aside-item">视频监控系统</div>
-          <var> <div class="aside-item">视频监控系统</div></var>
-        </dic>
-      </div>
+      <Aside @handleShowAside="handleShowAside" />
     </div>
   </div>
 </template>
 
 <script setup>
-import config from "../config";
-import initData from "../common/initData.js";
 //左侧
-import leftBox from "./components/leftBox/index.vue";
+import leftBox from './components/leftBox/index.vue';
 //右侧
-import rightBox from "./components/rightBox/index.vue";
-import { reactive } from "vue";
-const { base } = initData(config);
-const state = reactive({
-  showAside: false,
-});
-function handleShowHide() {
-  state.showAside = !state.showAside;
+import rightBox from './components/rightBox/index.vue';
+//侧边
+import Aside from '@/components/aside.vue';
+import { reactive } from 'vue';
+const state = reactive({});
+function handleShowAside(item) {
+  if (item) {
+    state.showAside = item;
+  } else {
+    state.showAside = false;
+  }
 }
 </script>
 <style lang="scss" scoped>
@@ -80,6 +60,9 @@ function handleShowHide() {
       box-shadow: vh(0) vh(2) vh(11) vh(0) rgba(0, 150, 255, 0.23);
       margin-top: vh(29);
       margin-right: vh(44);
+      &.show-aside {
+        filter: blur(5px);
+      }
     }
     .aside-model {
       width: vw(42);
@@ -100,25 +83,33 @@ function handleShowHide() {
       right: 0;
       cursor: pointer;
       opacity: 1;
-      background-image: url("@/assets/images/home/aside_show.png");
+      background-image: url('@/assets/images/home/aside_show.png');
       background-size: contain;
       background-repeat: no-repeat;
+
       .aside-list {
         height: 100%;
         position: absolute;
-        top: vh(250);
-        right: vw(30);
+        top: vh(200);
+        right: vw(25);
         .aside-item {
           width: vw(175);
           height: vh(34);
-          background-image: url("@/assets/images/home/aside_bg.png");
+          background-image: url('@/assets/images/home/aside_bg.png');
           background-size: contain;
           background-repeat: no-repeat;
           display: flex;
           align-items: center;
-          justify-content: center;
+          // justify-content: left;
+          padding-left: vw(35);
           color: #fff;
           margin-bottom: vh(29);
+          &:hover {
+            color: #02fbec;
+          }
+          &.active {
+            color: #02fbec;
+          }
         }
       }
     }
