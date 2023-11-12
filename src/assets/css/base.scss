@@ -1,0 +1,105 @@
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+img,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+form,
+label,
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article {
+  padding: 0;
+  margin: 0;
+  vertical-align: baseline;
+  border: 0;
+  box-sizing: border-box;
+  font-size: vw(14);
+}
+
+html,
+body {
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    '微软雅黑', Arial, sans-serif;
+  background-color: #ecf1f7;
+}
+
+table {
+  border-spacing: 0;
+}
+
+input,
+textarea,
+select,
+button {
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+input {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  outline: none;
+}
+
+div,
+input {
+  box-sizing: border-box;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none !important;
+}
+
+.appcontent {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform-origin: 0 0;
+}
+
+.el-affix {
+  width: 100% !important;
+}
+
+#stage {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transform-origin: 0 0;
+  /* background-color: palegoldenrod; */
+}
