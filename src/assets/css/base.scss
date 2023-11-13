@@ -129,6 +129,10 @@ a:focus {
 .el-table__body tr.current-row {
   opacity: 0.5;
   background: linear-gradient(270deg, rgba(26, 123, 230, 0) 0%, rgba(0, 119, 254, 0.8));
+
+  td {
+    color: #02f9f9 !important;
+  }
 }
 .el-table__inner-wrapper::before {
   background-color: transparent !important;

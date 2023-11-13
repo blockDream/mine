@@ -219,7 +219,7 @@ const tableData = [
           text-align: center;
           color: #ffffff;
           line-height: vh(37);
-          margin-left: vw(50);
+          margin-left: vw(30);
         }
         .car_num {
           margin-left: vw(220);
@@ -243,7 +243,7 @@ const tableData = [
         width: 100%;
         display: flex;
         justify-content: space-around;
-        margin-top: vh(35);
+        margin-top: vh(55);
         .info-online-car {
           width: 40%;
           height: vh(79);

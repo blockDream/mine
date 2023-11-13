@@ -4,8 +4,12 @@
   </div>
   <div v-if="state.showAside" class="aside-model-show" @click="handleShowHide">
     <div class="aside-list">
-      <div v-for="(item, index) in state.asideItemArr" :key="index"
-        :class="['aside-item', state.checkdAsideItem == item.id ? 'active' : '']" @click.stop="handleClickItem(item)">
+      <div
+        v-for="(item, index) in state.asideItemArr"
+        :key="index"
+        :class="['aside-item', state.checkdAsideItem == item.id ? 'active' : '']"
+        @click.stop="handleClickItem(item)"
+      >
         {{ item.label }}
       </div>
     </div>
@@ -20,6 +24,10 @@ const state = reactive({
   showAside: false,
   checkdAsideItem: 1,
   asideItemArr: [
+    // {
+    //   id: 11,
+    //   label: '首页',
+    // },
     {
       id: 1,
       label: '人员车辆定位监控系统',
@@ -73,6 +81,9 @@ function handleClickItem(item) {
     case 1:
       router.push('/vehiclePositionSys');
       break;
+    case 11:
+      router.push('/');
+      break;
 
     default:
       break;
@@ -107,8 +118,8 @@ function handleClickItem(item) {
   .aside-list {
     height: 100%;
     position: absolute;
-    top: vh(200);
-    right: vw(25);
+    top: vh(150);
+    right: vw(20);
     .aside-item {
       width: vw(175);
       height: vh(34);
